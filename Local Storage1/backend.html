@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Backend</h1>
+    <form id="investorForm">
+        <input id="imgURL" type="text" placeholder="Enter Image URL" />
+        <input id="name" type="text" placeholder="Enter investor name" />
+        <input id="role" type="text" placeholder="Enter investor role" />
+        <input
+          id="companyLogo"
+          type="text"
+          placeholder="Enter company logo URL"
+        />
+        <input type="submit" />
+      </form>
+</body>
+</html>
+
+<script>
+    var a = document.querySelector("form");
+    document.querySelector("form").addEventListener("submit",b)
+    var data = JSON.parse(localStorage.getItem("arr")) || []
+    function b(){
+        event.preventDefault();
+        var obj = {
+            img:a.imgURL.value,
+            name:a.name.value,
+            role:a.role.value,
+            logo:a.companyLogo.value
+        }
+        data.push(obj);
+        localStorage.setItem("idata",JSON.stringify(data))
+    }
+</script>
