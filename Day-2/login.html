@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 30%;margin: auto;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;border-radius: 15px;
+            padding-left: 20px;padding-bottom: 20px;padding-top: 5px;
+        }
+        #email,#no,#pass{
+                width: 80%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+        }
+        h5{
+            font-size: 20px;margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form action="">
+            <h5>Email</h5><br>
+            <input id="email" type="text"><br>
+            <h5>Password</h5><br>
+            <input id="pass" type="password"><br>
+            <button>Login</button>
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+<script>
+    var a = JSON.parse(localStorage.getItem("data"))
+    var b = document.querySelector("form")
+    document.querySelector("button").addEventListener("click",c)
+    function c(){
+        event.preventDefault();
+        
+        if(b.email.value==a[0].email && b.pass.value==a[0].pass)
+        {
+          alert("login successful")
+        }
+        else{
+          alert("wrong credentials")
+        }
+    }
+</script>
